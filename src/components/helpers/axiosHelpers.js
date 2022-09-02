@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 const APIEndPoint = 'https://jsonplaceholder.typicode.com/users';
 
-export const fetchUsersFromApi = () => {
-  try{
-    const result = await axios.get(APIEndPoint)
-    console.log(result);
-  }catch(error){
-    console.log(error);
-  }
+export const fetchUsersFromApi = async () => {
+	try {
+		const result = axios.get(APIEndPoint);
+		return result;
+	} catch (error) {
+		console.log(error);
+	}
 };
