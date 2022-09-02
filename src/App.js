@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ErrorNotFound from './components/404';
+import ErrorNotFound from './pages/404';
 
 function App() {
 	return (
