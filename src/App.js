@@ -1,12 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainPage from './pages/MainPage';
 import ErrorNotFound from './pages/404';
-
 function App() {
 	return (
-		<div className="App">
-			<ErrorNotFound />
-		</div>
+		<>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<MainPage />} />
+					<Route path="*" element={<ErrorNotFound />} />
+				</Routes>
+			</BrowserRouter>
+		</>
 	);
 }
 
