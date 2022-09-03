@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { SearchBar } from '../cards/SearchBar';
 import { TopBar } from '../cards/TopBar';
 import { ContactDetails } from '../contacts/ContactDetails';
+import { LoaderComponent } from '../loader-comps/LoaderComponent';
 import { NoContactCardClicked } from '../loader-comps/NoContactCardClicked';
 import { getUsersAction } from './contactActions';
 import './mainBox.css';
@@ -34,7 +35,7 @@ export const MainBox = () => {
 	return (
 		<div className="d-flex justify-content-center align-items-center vh-100">
 			{isLoading ? (
-				<div className="text-light">Hello</div>
+				<LoaderComponent />
 			) : (
 				<div className="card">
 					<TopBar />
