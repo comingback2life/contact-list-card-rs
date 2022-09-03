@@ -40,7 +40,7 @@ export const MainBox = () => {
 							<div className="text-center">Loading contacts...</div>
 						)}
 					</Col>
-					<Col className="containsUserDetails">
+					<Col className="containsUserDetails mb-3">
 						{userDetails.name && <ContactDetails user={userDetails} />}
 					</Col>
 				</Row>

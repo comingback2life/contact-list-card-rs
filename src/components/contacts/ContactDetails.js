@@ -7,7 +7,7 @@ import {
 	MdPhoneIphone,
 	MdBusiness,
 } from 'react-icons/md';
-import { FcBusiness, FcBusinessContact, FcGlobe } from 'react-icons/fc';
+import { FcBusinessContact, FcGlobe } from 'react-icons/fc';
 import './contactDetails.css';
 export const ContactDetails = ({ user }) => {
 	return (
@@ -44,7 +44,7 @@ export const ContactDetails = ({ user }) => {
 					</span>
 					<span>{user.address.city}, </span>
 					<br />
-					<span className="px-4"> {user.address.zipcode}</span>
+					<span className="px-3"> {user.address.zipcode}</span>
 				</div>
 				<div className="geo-cordinates">
 					<MdLocationPin style={{ color: '#ef233c' }} /> Long:{' '}
@@ -61,6 +61,7 @@ export const ContactDetails = ({ user }) => {
 					<br />
 					<span className="px-3 text-muted"> "{user.company.catchPhrase}"</span>
 					<br />
+					<span className="bs px-4">{user.company.bs}</span>
 				</div>
 			</div>
 		</>
