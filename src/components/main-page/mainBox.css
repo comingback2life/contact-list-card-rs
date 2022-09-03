@@ -1,6 +1,6 @@
 .card {
 	width: 100vh;
-	height: 60vh;
+	max-height: 90vh;
 	margin: 0 auto;
 	background-color: #f8fbfe;
 	border-radius: 8px;
@@ -50,5 +50,13 @@
 	border: 1px red solid;
 }
 .isContactCard {
+	max-height: 50vh;
 	overflow: scroll;
+}
+
+.isContactName {
+	padding: 8px;
+}
+.isContactName:hover {
+	background-color: #dddddd;
 }

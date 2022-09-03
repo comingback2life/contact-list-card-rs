@@ -6,8 +6,7 @@ import { ContactName } from '../contacts/ContactName';
 import { getUsersAction } from './contactActions';
 import './mainBox.css';
 export const MainBox = () => {
-	const [name, setName] = useState({});
-	const [localContacts, setLocalContacts] = useState({});
+	const [name, setName] = useState('');
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -17,29 +16,27 @@ export const MainBox = () => {
 	const { userContacts } = useSelector((state) => state.userContacts);
 	return (
 		<div className="d-flex justify-content-center align-items-center vh-100">
-			<Row className="card">
+			<div className="card">
 				<TopBar />
 				<Row>
-					<Col xs={4} className="isContactCard">
+					<Col xs={4} className="isContactCard mt-2">
+						<p className="px-3">Search Bar?</p>
 						{userContacts.length
 							? userContacts.map((item) => {
 									return (
-										<>
-											<ContactName
-												name={item.name}
-												onClick={() => setName(item)}
-											>
-												{item.name}
-											</ContactName>
-										</>
+										<div
+											className="isContactName mb-2 mt-2"
+											onClick={() => setName(item.name)}
+										>
+											{item.name}
+										</div>
 									);
 							  })
 							: ''}
 					</Col>
-
-					<Col>{console.log(name)}</Col>
+					<Col>{name}</Col>
 				</Row>
-			</Row>
+			</div>
 		</div>
 	);
 };
