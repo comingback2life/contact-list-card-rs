@@ -8,6 +8,7 @@ import { getUsersAction } from './contactActions';
 import './mainBox.css';
 export const MainBox = () => {
 	const { userContacts } = useSelector((state) => state.userContacts);
+	const [userContactLocal, setUserContactLocal] = useState({});
 	const [userDetails, setUserDetails] = useState({});
 	const dispatch = useDispatch();
 
@@ -17,6 +18,10 @@ export const MainBox = () => {
 
 	const handleOnChange = (e) => {
 		const { value } = e.target;
+		console.log(value);
+		setUserContactLocal(
+			userContacts.filter((item) => item.name.includes(value))
+		);
 	};
 
 	return (
@@ -29,32 +34,33 @@ export const MainBox = () => {
 							<input
 								type="text"
 								class="searchbar-input"
-								maxlength="2048"
-								name="query"
-								autocapitalize="off"
-								autocomplete="off"
-								title="Search"
-								placeholder="Search"
 								onChange={handleOnChange}
 							/>
 						</SearchBar>
 					</div>
 					<Row>
 						<Col xs={4} className="isContactCard mt-2">
-							{userContacts.length ? (
-								userContacts.map((item) => {
-									return (
-										<div
-											className="isContactName mb-2 mt-2"
-											onClick={() => setUserDetails(item)}
-										>
-											{item.name}
-										</div>
-									);
-								})
-							) : (
-								<div className="text-center">Loading contacts...</div>
-							)}
+							{userContactLocal.length
+								? userContactLocal.map((item) => {
+										return (
+											<div
+												className="isContactName mb-2 mt-2"
+												onClick={() => setUserDetails(item)}
+											>
+												{item.name}
+											</div>
+										);
+								  })
+								: userContacts.map((item) => {
+										return (
+											<div
+												className="isContactName mb-2 mt-2"
+												onClick={() => setUserDetails(item)}
+											>
+												{item.name}
+											</div>
+										);
+								  })}
 						</Col>
 						<Col className="containsUserDetails mb-3">
 							{userDetails.name && <ContactDetails user={userDetails} />}
