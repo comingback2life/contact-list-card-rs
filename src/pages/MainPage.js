@@ -1,10 +1,10 @@
 import React from 'react';
-import { ContactListCard } from '../components/ContactListCard';
+import { MainBox } from '../components/main-page/MainBox';
 
 const MainPage = () => {
 	return (
 		<div>
-			<ContactListCard />
+			<MainBox />
 		</div>
 	);
 };
