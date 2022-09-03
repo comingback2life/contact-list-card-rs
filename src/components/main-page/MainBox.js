@@ -16,35 +16,34 @@ export const MainBox = () => {
 
 	return (
 		<div className="d-flex justify-content-center align-items-center vh-100">
-			{userContacts?.length > 1 ? (
-				'Card'
+			{userContacts?.length >= 1 ? (
+				<div className="card">
+					<TopBar />
+					<Row>
+						<Col xs={4} className="isContactCard mt-2">
+							{userContacts.length ? (
+								userContacts.map((item) => {
+									return (
+										<div
+											className="isContactName mb-2 mt-2"
+											onClick={() => setUserDetails(item)}
+										>
+											{item.name}
+										</div>
+									);
+								})
+							) : (
+								<div className="text-center">Loading contacts...</div>
+							)}
+						</Col>
+						<Col className="containsUserDetails mb-3">
+							{userDetails.name && <ContactDetails user={userDetails} />}
+						</Col>
+					</Row>
+				</div>
 			) : (
-				<div className="text-light">Hello</div>
+				<div className="text-light">Loading contacts...</div>
 			)}
-			<div className="card">
-				<TopBar />
-				<Row>
-					<Col xs={4} className="isContactCard mt-2">
-						{userContacts.length ? (
-							userContacts.map((item) => {
-								return (
-									<div
-										className="isContactName mb-2 mt-2"
-										onClick={() => setUserDetails(item)}
-									>
-										{item.name}
-									</div>
-								);
-							})
-						) : (
-							<div className="text-center">Loading contacts...</div>
-						)}
-					</Col>
-					<Col className="containsUserDetails mb-3">
-						{userDetails.name && <ContactDetails user={userDetails} />}
-					</Col>
-				</Row>
-			</div>
 		</div>
 	);
 };

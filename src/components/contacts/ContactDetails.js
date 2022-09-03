@@ -5,7 +5,6 @@ import {
 	MdMail,
 	MdPerson,
 	MdPhoneIphone,
-	MdBusiness,
 } from 'react-icons/md';
 import { FcBusinessContact, FcGlobe } from 'react-icons/fc';
 import './contactDetails.css';
