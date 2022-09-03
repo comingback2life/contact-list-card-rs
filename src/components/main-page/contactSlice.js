@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	userContacts: [],
+	isLoading: true,
 }; //the initial state for the users
 
 const userContactSlice = createSlice({
@@ -10,6 +11,7 @@ const userContactSlice = createSlice({
 	reducers: {
 		setUserContacts: (state, { payload }) => {
 			state.userContacts = payload; //payload is destructured from action
+			state.isLoading = false;
 		},
 	},
 });
