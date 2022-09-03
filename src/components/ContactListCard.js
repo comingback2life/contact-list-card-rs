@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUsersAction } from './main-page/contactActions';
 export const ContactListCard = () => {
-	const users = useSelector((state) => state.userContacts);
-	console.log(users);
+	const dispatch = useDispatch();
+	dispatch(getUsersAction());
 	return <div>ContactListCard</div>;
 };

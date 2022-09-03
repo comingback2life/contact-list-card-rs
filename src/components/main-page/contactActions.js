@@ -1,7 +1,7 @@
-import { fetchUsersFromApi } from '../helpers/axiosHelpers';
-import { setUserContacts } from './contactSlice';
+import { fetchUsersFromApi } from '../helpers/axiosHelpers.js';
+import { setUserContacts } from './contactSlice.js';
 
-const getUsersAction = () => async (dispatch) => {
+export const getUsersAction = () => async (dispatch) => {
 	const getAllUserDetails = await fetchUsersFromApi();
 	dispatch(setUserContacts(getAllUserDetails));
 };
