@@ -49,3 +49,6 @@
 .isTest {
 	border: 1px red solid;
 }
+.isContactCard {
+	overflow: scroll;
+}

@@ -1,0 +1,7 @@
+.isContactName {
+	border-bottom: 1px #404041 solid;
+	padding: 8px;
+}
+.isContactName:hover {
+	background-color: #dddddd;
+}
