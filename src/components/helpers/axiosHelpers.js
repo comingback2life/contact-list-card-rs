@@ -6,6 +6,6 @@ export const fetchUsersFromApi = async () => {
 		const result = await axios.get(APIEndPoint);
 		return result.data;
 	} catch (error) {
-		console.log(error);
+		return;
 	}
 };

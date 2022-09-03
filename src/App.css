@@ -1,3 +1,10 @@
 body {
 	background-color: #212121;
 }
+.FaHeartBroken {
+	font-size: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: red;
+}

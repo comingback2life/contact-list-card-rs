@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { TopBar } from '../cards/TopBar';
+import { ContactDetails } from '../contacts/ContactDetails';
 import { getUsersAction } from './contactActions';
 import './mainBox.css';
 export const MainBox = () => {
-	const [name, setName] = useState({});
+	const { userContacts } = useSelector((state) => state.userContacts);
+	const [userDetails, setUserDetails] = useState({});
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getUsersAction());
 	}, []);
 
-	const { userContacts } = useSelector((state) => state.userContacts);
 	return (
 		<div className="d-flex justify-content-center align-items-center vh-100">
+			{userContacts?.length > 1 ? (
+				'Card'
+			) : (
+				<div className="text-light">Hello</div>
+			)}
 			<div className="card">
 				<TopBar />
 				<Row>
@@ -24,7 +30,7 @@ export const MainBox = () => {
 								return (
 									<div
 										className="isContactName mb-2 mt-2"
-										onClick={() => setName(item)}
+										onClick={() => setUserDetails(item)}
 									>
 										{item.name}
 									</div>
@@ -34,7 +40,7 @@ export const MainBox = () => {
 							<div className="text-center">Loading contacts...</div>
 						)}
 					</Col>
-					<Col>{name.length > 1 ? 'Hello' : 'No Hello'}</Col>
+					<Col>{userDetails.name && <ContactDetails user={userDetails} />}</Col>
 				</Row>
 			</div>
 		</div>
