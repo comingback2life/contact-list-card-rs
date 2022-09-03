@@ -9,7 +9,7 @@ export const NoContactCardClicked = () => {
 				Santa tells me, you haven't clicked on a name
 			</p>
 			<p className="text-muted">Please click on a name to get started</p>
-			<p className="text-muted">and the magic happens...</p>
+			<p className="text-lead">and the magic happens...</p>
 		</div>
 	);
 };

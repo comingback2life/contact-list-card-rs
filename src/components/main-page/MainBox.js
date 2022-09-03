@@ -22,7 +22,9 @@ export const MainBox = () => {
 	const handleOnChange = (e) => {
 		const { value } = e.target;
 		setUserContactLocal(
-			userContacts.filter((item) => item.name.includes(value))
+			userContacts.filter((item) =>
+				item.name.toUpperCase().includes(value.toUpperCase())
+			)
 		);
 		if (userContactLocal.length < 1) {
 			setUserContactLocal({});
