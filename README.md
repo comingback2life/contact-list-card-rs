@@ -45,6 +45,9 @@ Build from DockerFile
 ```bash
   git clone https://github.com/comingback2life/contact-list-card-rs
 ```
+```bash
+  cd contact-list-rs
+```
 
 ```bash
    docker build -t contact-list-rs:latest .
